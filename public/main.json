@@ -1,0 +1,221 @@
+{
+    "games": [{
+
+            "team": "U1",
+            "opposingTeam": "U4",
+            "month": "september",
+            "date": "09/01",
+            "time": "9:30 a.m.",
+            "location": "AJ Katzenmaier"
+
+               },
+        {
+            "team": "U3",
+            "opposingTeam": "U2",
+            "month": "september",
+            "date": "09/01",
+            "time": "1:00 p.m.",
+            "location": "Greenbay"
+
+               },
+        {
+            "team": "U5",
+            "opposingTeam": "U6",
+            "month": "september",
+            "date": "09/08",
+            "time": "9:30 a.m.",
+            "location": "Howard A Yeager"
+
+               },
+        {
+            "team": "U6",
+            "opposingTeam": "U1",
+            "month": "september",
+            "date": "09/08",
+            "time": "1:00 p.m.",
+            "location": "Marjorie P Hart"
+
+               },
+        {
+            "team": "U2",
+            "opposingTeam": "U4",
+            "month": "september",
+            "date": "09/15",
+            "time": "9:30 a.m.",
+            "location": "North"
+
+               },
+        {
+            "team": "U3",
+            "opposingTeam": "U5",
+            "month": "september",
+            "date": "09/15",
+            "time": "1:00 p.m.",
+            "location": "AJ Katzenmaier"
+
+               },
+        {
+            "team": "U1",
+            "opposingTeam": "U3",
+            "month": "september",
+            "date": "09/22",
+            "time": "9:30 a.m.",
+            "location": "South"
+
+               },
+        {
+            "team": "U2",
+            "opposingTeam": "U6",
+            "month": "september",
+            "date": "09/22",
+            "time": "1:00 p.m.",
+            "location": "Howard A Yeager"
+
+               },
+        {
+            "team": "U4",
+            "opposingTeam": "U5",
+            "month": "september",
+            "date": "09/29",
+            "time": "9:30 a.m.",
+            "location": "Greenbay"
+               },
+        {
+            "team": "U2",
+            "opposingTeam": "U5",
+            "month": "october",
+            "date": "10/06",
+            "time": "9:30 a.m.",
+            "location": "Marjorie P Hart"
+
+               },
+        {
+            "team": "U1",
+            "opposingTeam": "U6",
+            "month": "october",
+            "date": "10/06",
+            "time": "1:00 p.m.",
+            "location": "South"
+
+               },
+        {
+            "team": "U3",
+            "opposingTeam": "U4",
+            "month": "october",
+            "date": "10/08",
+            "time": "9:30 a.m.",
+            "location": "Howard A Yeager"
+
+               },
+        {
+            "team": "U5",
+            "opposingTeam": "U1",
+            "month": "october",
+            "date": "10/08",
+            "time": "1:00 p.m.",
+            "location": "Greenbay"
+
+               },
+        {
+            "team": "U6",
+            "opposingTeam": "U3",
+            "month": "october",
+            "date": "10/20",
+            "time": "9:30 a.m.",
+            "location": "North"
+
+               },
+        {
+            "team": "U2",
+            "opposingTeam": "U4",
+            "month": "october",
+            "date": "10/20",
+            "time": "1:00 p.m.",
+            "location": "Marjorie P Hart"
+    },
+        {
+            "team": "U3",
+            "opposingTeam": "U1",
+            "month": "october",
+            "date": "10/27",
+            "time": "9:30 a.m.",
+            "location": "AJ Katzenmaier"
+
+               },
+        {
+            "team": "U5",
+            "opposingTeam": "U6",
+            "month": "october",
+            "date": "10/27",
+            "time": "1:00 p.m.",
+            "location": "Howard A Yeager"
+    }
+
+    ],
+
+    "locations":[ {
+        
+        "locationName": "AJ Katzenmaier",
+        "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.7808660976257!2d-87.86492878504059!3d42.325872445253424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f932fbc6ba7cd%3A0xcf2bbe275c6da815!2sA+J+Katzenmaier+Elementary+School!5e0!3m2!1sen!2snl!4v1551084219938"
+    },
+    {
+
+        "locationName": "Greenbay",
+        "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.010826048363!2d-87.87105288504077!3d42.320967845562876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f933bce5af881%3A0x740a7a7d548adce1!2sGreenbay+Elementary+School+(K-5)!5e0!3m2!1sen!2snl!4v1551086318189"
+    },
+    {
+
+        "locationName": "Howard A Yeager",
+        "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5856648778213!2d-87.66511018505446!3d41.92326497056643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f852467%3A0xb6cb22b2f0358874!2sHoward+A+Yeager+Elementary!5e0!3m2!1sen!2snl!4v1551104381041"
+    },
+    {
+        "locationName": "Marjorie P Hart",
+        "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2896536435937!2d-87.64816138505428!3d41.929626870168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie+P+Hart+Elementary!5e0!3m2!1sen!2snl!4v1551092630174"
+    },
+    {
+        "locationName": "North",
+        "iframe": "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2969.335832778018!2d-87.64833373505502!3d41.907138771576264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNorth+Elementary+1409+N.+Ogden+Ave.%2C+Chicago%2C+IL+60610!5e0!3m2!1sen!2snl!4v1551092701492"
+    },
+    {
+        "locationName": "South",
+        "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7304676169074!2d-87.65286418505458!3d41.92015257076138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196e269cbf%3A0x1caabcbc4893f0da!2sSt+James+Lutheran+School!5e0!3m2!1sen!2snl!4v1551092777226"
+    }],
+
+
+    "teams": {
+
+        "U1": {
+            "teamName": "Goldstrikers",
+            "images": "https://i.ibb.co/ysyS6b4/U1.jpg"
+        },
+
+        "U2": {
+            "teamName": "Rush Hour",
+            "images": "https://i.ibb.co/BsTcyRL/U2.jpg"
+        },
+
+        "U3": {
+            "teamName": "Rangers",
+            "images": "https://i.ibb.co/7vx0mgC/U3.jpg"
+        },
+
+
+        "U4": {
+            "teamName": "The Knight Riders",
+            "images": "https://i.ibb.co/JRvjT7V/U4.jpg"
+        },
+
+
+        "U5": {
+            "teamName": "Cheetahs",
+            "images": "https://i.ibb.co/Nxp2tgy/U5.jpg"
+        },
+
+
+        "U6": {
+            "teamName": "Crusaders",
+            "images": "https://i.ibb.co/TW8sYhK/U6.jpg"
+        },
+
+    }
+}

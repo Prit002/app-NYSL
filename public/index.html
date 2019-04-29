@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">    
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="shortcut icon" href="images/nysl_logo%20(1).png">
+    <title> NYSL APP </title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="landingPage" class="mainpage" v-if="currentPage == 0">
+            <div class="header">
+                <h3 id="title">Northside Youth Soccer League</h3>
+            </div>
+            <div class="heading-button">
+                <ul>
+                    <li>
+                        <div class="schedule"><img src="images/iconfinder_Calendersvg_1579797.png" alt="schedule-icon" @click="changePage(1)">Schedule</div>
+                    </li>
+                    <li>
+                        <div class="schedule"><img src="images/placeholder.png" alt="location-icon" @click="changePage(2)">Location</div>
+                    </li>
+                    <li>
+                        <div class="schedule"><img src="images/icons8-chat-room-64.png" alt="chat-icon" @click="changePage(3)">Chats</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="game_Schedule" v-if="currentPage == 1">
+
+            <div class="game-filter">             
+               
+                <form name="filter" class="gameFilter" id="FilterForm" action="" method="">
+
+
+                    <select id="team-filter" class="filter" v-on:change="filterData()" v-model="teamsValue">
+
+                        <option value="select">--Teams--</option>
+                        <option v-for="(key, value) in teams" v-bind:value="value">{{key.teamName}}</option>
+
+                    </select>
+                    <h3 class="text-align">Schedule</h3>
+
+                    <select id="location-filter" class="filter" v-on:change="filterData()" v-model="locationValue">
+
+                        <option value="select">--Locations--</option>
+                        <option v-for="location in locationNames" v-bind:value="location">{{location}}</option>
+
+                    </select>
+                </form>
+                
+                </div>
+                <div class="page">
+                <div id="displayMessage" v-if= "filterArray == 0">No information matches that search!</div>
+                <div v-if= "filterArray == 0" ><button id="login" class="login-button" @click="refreshPage">Back</button></div>
+                
+                <div class="all-games" v-for="game in filterArray">
+                    <div class="match-host"><img v-bind:src="teams[game.team].images" alt=""></div>
+                    <div class="match-host">{{game.date}} </div>
+                    <div class="match-host">{{game.location}}</div>
+                    <div class="match-host">{{game.time}}</div>
+
+
+                    <div class="match-host"><img v-bind:src="teams[game.opposingTeam].images" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+            <nav class="bottom-nav">
+                <div class="icon"><img src="images/home-xxl.png" alt="home-icon" @click="changePage(0)">
+                    Home
+                </div>
+                <div class="icon"><img src="images/location.png" alt="location-icon" @click="changePage(2)">
+                    Location
+                </div>
+                <div class="icon"><img src="images/chat-4-xxl.png" alt="chat-icon" @click="changePage(3)">
+                    Chat
+                </div>
+            </nav>
+
+        </div>
+        <div id="location-page" v-if="currentPage == 2">
+            <div class="heading">
+                <h3 class="text-align">Location</h3>
+            </div>
+            <div class="page">
+                <div class="location-div">
+                    <div class="collapsible-item" v-for="(location,index) in customItems">
+                        <div @click="location.active = !location.active" class="collapsible-item-header">
+                            {{location.locationName}}
+                        </div>
+
+                        <div class="collapsible-item-body" v-if="location.active"> <iframe :src="location.iframe" frameborder="0"></iframe></div>
+
+                    </div>
+                </div>
+            </div>
+            <nav class="bottom-nav">
+                <div class="icon"><img src="images/home-xxl.png" alt="home-icon" @click="changePage(0)">
+                    Home
+                </div>
+                <div class="icon"><img src="images/planner-xxl.png" alt="location-icon" @click="changePage(1)">
+                    Schedule
+                </div>
+                <div class="icon"><img src="images/chat-4-xxl.png" alt="chat-icon" @click="changePage(3)">
+                    Chat
+                </div>
+            </nav>
+
+        </div>
+        <div id="chat-page" v-if="currentPage == 3">
+            <div class="heading">
+                <h3 class="text-align">Chats</h3>
+            </div>
+            <div class="page1" >
+                <div class="chat" v-if="loggedIn == false">
+                    <span v-if="loggedIn == false"><button id="login" class="login-button" @click="login">Login</button></span>
+
+                    <div v-if="loggedIn == false" class="chat-heading">Welcome to NYSL Login Page.</div>
+                    <div class="image" v-if="loggedIn == false"><img src="images/nysl_logo%20(1).png"  alt="logo"></div></div>
+
+
+                <!--            after login-->
+
+                <div class="chat-body" v-if="loggedIn == true">
+
+                    <div class="text-background">
+
+                        <div v-if="loggedIn == true" class="conversation" v-for="message in messages" v-bind:class="{ 'self': (message.email == currentUser), 'other': (message.email != currentUser) }">
+                            <div class="userImage">
+                                <img :src="message.image" alt=""></div>
+                            <div class="messages">
+                                <div><span class="name">{{ message.name }} :</span> {{ message.body }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputs" v-if="loggedIn == true">
+                        <input id="textInput" class="inputbox" type="text" placeholder="Your message...">
+                        <button id="create-post" class="sendButton" @click="writeNewPost">Send</button>
+                    </div>
+                </div>
+                <div class="logoutButton"><span v-if="loggedIn == true"><button id="logout" class="login-button" @click="logout">Logout</button></span></div>
+
+            </div>
+
+            <nav class="bottom-nav">
+                <div class="icon"><img src="images/home-xxl.png" alt="home-icon" @click="changePage(0)">
+                    Home
+                </div>
+                <div class="icon"><img src="images/planner-xxl.png" alt="schedule-icon" @click="changePage(1)">
+                    Schedule
+                </div>
+                <div class="icon"><img src="images/location.png" alt="location-icon" @click="changePage(2)">
+                    Location
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDsBfenJsa0RDY_R9pkn2u139oPHjJQUIQ",
+            authDomain: "app-nysl-50932.firebaseapp.com",
+            databaseURL: "https://app-nysl-50932.firebaseio.com",
+            projectId: "app-nysl-50932",
+            storageBucket: "app-nysl-50932.appspot.com",
+            messagingSenderId: "971817724477"
+        };
+        firebase.initializeApp(config);
+    </script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="vue.js"></script>
+
+</body>
+
+</html>
